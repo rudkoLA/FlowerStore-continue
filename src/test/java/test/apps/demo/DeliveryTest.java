@@ -29,11 +29,11 @@ public class DeliveryTest {
         flower.setFlowerType(FlowerType.TULIP);
         flower.setSepalLength(SEPAL_LENGTH);
 
-        FlowerBucket flowerBucket1 = new FlowerBucket();
-        FlowerPack flowerPack1 = new FlowerPack(flower, FLOWER_COUNT);
+        FlowerBucket flowerBucket = new FlowerBucket();
+        FlowerPack flowerPack = new FlowerPack(flower, FLOWER_COUNT);
 
-        flowerBucket1.add(flowerPack1);
-        item.setFlowerBucket(flowerBucket1);
+        flowerBucket.add(flowerPack);
+        item.setFlowerBucket(flowerBucket);
         order.addItem(item);
 
         assertEquals(EXPECTED_PRICE, order.getTotalPrice());

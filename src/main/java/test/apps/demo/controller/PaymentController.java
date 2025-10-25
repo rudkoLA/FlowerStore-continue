@@ -16,8 +16,8 @@ public class PaymentController {
 
     @GetMapping("/payment")
     public List<Double> getPayments() {
-        double price1 = new CreditCardPaymentStrategy().pay(DEFAULT_PRICE);
-        double price2 = new PayPalPaymentStrategy().pay(DEFAULT_PRICE);
-        return List.of(price1, price2);
+        double creditCardPrice = new CreditCardPaymentStrategy().pay(DEFAULT_PRICE);
+        double payPalPrice = new PayPalPaymentStrategy().pay(DEFAULT_PRICE);
+        return List.of(creditCardPrice, payPalPrice);
     }
 }
