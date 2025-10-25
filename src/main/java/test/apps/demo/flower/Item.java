@@ -8,15 +8,15 @@ public class Item {
         this.flowerBucket = new FlowerBucket();
     }
 
-    public Item(FlowerBucket flowerBucket) {
-        this.flowerBucket = flowerBucket;
+    public Item(FlowerBucket bucket) {
+        this.flowerBucket = bucket;
     }
 
     public FlowerBucket getFlowerBucket() {
         return flowerBucket;
     }
 
-    public void setFlowerBucket(FlowerBucket flowerBucket) {
-        this.flowerBucket = flowerBucket;
+    public void setFlowerBucket(FlowerBucket bucket) {
+        this.flowerBucket = bucket;
     }
 }

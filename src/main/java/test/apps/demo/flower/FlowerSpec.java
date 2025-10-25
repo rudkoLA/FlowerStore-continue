@@ -33,9 +33,11 @@ public class FlowerSpec {
             return true;
         }
 
-        if (!(obj instanceof FlowerSpec other)) {
+        if (!(obj instanceof FlowerSpec)) {
             return false;
         }
+
+        FlowerSpec other = (FlowerSpec) obj;
 
         return Double.compare(this.sepalLength, other.sepalLength) == 0
                 && this.color.equals(other.color)

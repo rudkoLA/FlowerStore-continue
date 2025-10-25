@@ -34,9 +34,11 @@ public class FlowerBucket {
             return true;
         }
 
-        if (!(obj instanceof FlowerBucket other)) {
+        if (!(obj instanceof FlowerBucket)) {
             return false;
         }
+
+        FlowerBucket other = (FlowerBucket) obj;
 
         return flowerPacks.equals(other.flowerPacks);
     }

@@ -28,11 +28,11 @@ public class Order {
         return total;
     }
 
-    public void setDelivery(Delivery delivery) {
-        this.delivery = delivery;
+    public void setDelivery(Delivery newDelivery) {
+        this.delivery = newDelivery;
     }
 
-    public void setPayment(Payment payment) {
-        this.payment = payment;
+    public void setPayment(Payment newPayment) {
+        this.payment = newPayment;
     }
 }
