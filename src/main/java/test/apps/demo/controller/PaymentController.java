@@ -12,12 +12,12 @@ import test.apps.demo.payment.PayPalPaymentStrategy;
 @RestController
 @RequestMapping("/flowerstore")
 public class PaymentController {
-    static final double DEFAULT_PRICE = 100;
+    static final double PRICE = 100;
 
     @GetMapping("/payment")
     public List<Double> getPayments() {
-        double creditCardPrice = new CreditCardPaymentStrategy().pay(DEFAULT_PRICE);
-        double payPalPrice = new PayPalPaymentStrategy().pay(DEFAULT_PRICE);
+        double creditCardPrice = new CreditCardPaymentStrategy().pay(PRICE);
+        double payPalPrice = new PayPalPaymentStrategy().pay(PRICE);
         return List.of(creditCardPrice, payPalPrice);
     }
 }

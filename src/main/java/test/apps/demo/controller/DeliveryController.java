@@ -12,12 +12,12 @@ import test.apps.demo.delivery.PostDeliveryStrategy;
 @RestController
 @RequestMapping("/flowerstore")
 public class DeliveryController {
-    static final double DELIVER_TEST_PRICE = 120;
+    static final double PRICE = 120;
 
     @GetMapping("/delivery")
     public List<Double> getDeliveries() {
-        double firstDelivery = new PostDeliveryStrategy().deliver((DELIVER_TEST_PRICE));
-        double secondDelivery = new DHLDeliveryStrategy().deliver((DELIVER_TEST_PRICE));
+        double firstDelivery = new PostDeliveryStrategy().deliver((PRICE));
+        double secondDelivery = new DHLDeliveryStrategy().deliver((PRICE));
         return List.of(firstDelivery, secondDelivery);
     }
 }
