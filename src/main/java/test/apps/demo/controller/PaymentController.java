@@ -12,7 +12,8 @@ import test.apps.demo.payment.PayPalPaymentStrategy;
 @RestController
 @RequestMapping("/flowerstore")
 public class PaymentController {
-    final static double DEFAULT_PRICE = 100;
+    static final double DEFAULT_PRICE = 100;
+
     @GetMapping("/payment")
     public List<Double> getPayments() {
         double price1 = new CreditCardPaymentStrategy().pay(DEFAULT_PRICE);

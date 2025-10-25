@@ -12,7 +12,7 @@ import test.apps.demo.delivery.PostDeliveryStrategy;
 @RestController
 @RequestMapping("/flowerstore")
 public class DeliveryController {
-    final static double DELIVER_TEST_PRICE = 120;
+    static final double DELIVER_TEST_PRICE = 120;
 
     @GetMapping("/delivery")
     public List<Double> getDeliveries() {

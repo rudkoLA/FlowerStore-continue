@@ -9,10 +9,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 public class DeliveryTest {
-    final static double FLOWER_PRICE = 50;
-    final static double SEPAL_LENGTH = 10;
-    final static int FLOWER_COUNT = 2;
-    final static double EXPECTED_PRICE = 105;
+    static final double FLOWER_PRICE = 50;
+    static final double SEPAL_LENGTH = 10;
+    static final int FLOWER_COUNT = 2;
+    static final double EXPECTED_PRICE = 105;
 
     @Test
     public void testPostDelivery() {
@@ -21,20 +21,20 @@ public class DeliveryTest {
         order.setDelivery(new PostDeliveryStrategy());
         order.setPayment(new CreditCardPaymentStrategy());
 
-        Item item1 = new Item();
-        Flower flower1 = new Flower();
+        Item item = new Item();
+        Flower flower = new Flower();
 
-        flower1.setPrice(FLOWER_PRICE);
-        flower1.setColor(FlowerColor.RED);
-        flower1.setFlowerType(FlowerType.TULIP);
-        flower1.setSepalLength(SEPAL_LENGTH);
+        flower.setPrice(FLOWER_PRICE);
+        flower.setColor(FlowerColor.RED);
+        flower.setFlowerType(FlowerType.TULIP);
+        flower.setSepalLength(SEPAL_LENGTH);
 
         FlowerBucket flowerBucket1 = new FlowerBucket();
-        FlowerPack flowerPack1 = new FlowerPack(flower1, FLOWER_COUNT);
+        FlowerPack flowerPack1 = new FlowerPack(flower, FLOWER_COUNT);
 
         flowerBucket1.add(flowerPack1);
-        item1.setFlowerBucket(flowerBucket1);
-        order.addItem(item1);
+        item.setFlowerBucket(flowerBucket1);
+        order.addItem(item);
 
         assertEquals(EXPECTED_PRICE, order.getTotalPrice());
     }
